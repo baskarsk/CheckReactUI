@@ -1,0 +1,248 @@
+---
+resource_types:
+- name: email
+  type: docker-image
+  source:
+    repository: pcfseceng/email-resource
+    tag: latest
+resources:
+- name: resource-git-onboarding_ui
+  type: git
+  source:
+    uri: {{git-url}}
+    branch: {{git-branch}}
+    username: {{git-user}}
+    private_key: {{git-private-key}}
+- name: resource-cf-deploy-onboarding_ui
+  type: cf
+  source:
+    api: {{cf-api}}
+    username: {{cf-user}}
+    password: {{cf-password}}
+    organization: {{cf-org}}
+    space: {{cf-space}}
+    skip_cert_check: false
+- name: notification
+  type: email
+  source:
+    smtp:
+      host: smtp.gmail.com
+      port: "587"
+      username: {{email-username}}
+      password: {{email-password}}
+    from: {{email-from}}
+    to: ["cognizantonboarding2017@gmail.com"]
+# - name: resource-release-onboarding_ui
+#   type: github-release
+#   source:
+#     owner: {{git-release-owner}}
+#     repository: {{git-release-repository}}
+#     access_token: {{git-release-access_token}}
+
+jobs:
+  - name: send-email
+    public: true
+    plan:
+    - get: resource-git-onboarding_ui
+      trigger: true
+    - task: send-email-content
+      config:
+        platform: linux
+        inputs:
+        - name: resource-git-onboarding_ui
+        outputs:
+        - name: send-email-contents
+        image_resource:
+          type: docker-image
+          source: { repository: pallet/git-client}
+        run:
+          path: sh
+          args:
+          - -exc
+          - |
+            LAST_COMMIT_HASH=$(cd resource-git-onboarding_ui && git log -1 |grep commit | cut -d' ' -f2)
+            LAST_COMMIT_DETAILS=$(cd resource-git-onboarding_ui && git log -1 --name-status)
+            echo "Deployment Started  for commit -  ${LAST_COMMIT_HASH}" >> send-email-contents/subject.txt
+            echo "Deployment Started for commit - ${LAST_COMMIT_DETAILS}" >> send-email-contents/body.txt
+    - put: notification
+      params:
+        subject:  send-email-contents/subject.txt
+        body: send-email-contents/body.txt
+  - name: run-test
+    public: true
+    plan:
+    - get: resource-git-onboarding_ui
+      passed: [send-email]
+      trigger: true
+    - task: run-test
+      file: resource-git-onboarding_ui/ci/tasks/run-test.yml
+      on_failure:
+        do:
+         - task: run-test-email-content
+           config:
+             platform: linux
+             inputs:
+             - name: resource-git-onboarding_ui
+             outputs:
+             - name: test-email-contents
+             image_resource:
+               type: docker-image
+               source: { repository: pallet/git-client}
+             run:
+               path: sh
+               args:
+               - -exc
+               - |
+                 LAST_COMMIT_HASH=$(cd resource-git-onboarding_ui && git log -1 |grep commit | cut -d' ' -f2)
+                 LAST_COMMIT_DETAILS=$(cd resource-git-onboarding_ui && git log -1 --name-status)
+                 echo "Error Excuting test cases for commit -  ${LAST_COMMIT_HASH}" >> test-email-contents/subject.txt
+                 echo "Error Excuting test cases for commit - ${LAST_COMMIT_DETAILS}" >> test-email-contents/body.txt
+         - put: notification
+           params:
+             subject:  test-email-contents/subject.txt
+             body: test-email-contents/body.txt
+  - name: build-int
+    public: true
+    plan:
+    - get: resource-git-onboarding_ui
+      passed: [run-test]
+      trigger: true
+    - task: build-int
+      file: resource-git-onboarding_ui/ci/tasks/build.yml
+      # on_success:
+      #   do:
+      #   - put: resource-release-onboarding_ui
+      #     params:
+      #       name: resource-git-onboarding_ui/release.txt
+      #       tag: resource-git-onboarding_ui/release.txt
+      #       globs:
+      #       - uiCode/    
+      on_failure:
+        do:
+        - task: build-email-content
+          config:
+            platform: linux
+            inputs:
+            - name: resource-git-onboarding_ui
+            outputs:
+            - name: build-email-contents
+            image_resource:
+              type: docker-image
+              source: { repository: pallet/git-client}
+            run:
+              path: sh
+              args:
+              - -exc
+              - |
+                LAST_COMMIT_HASH=$(cd resource-git-onboarding_ui && git log -1 |grep commit | cut -d' ' -f2)
+                LAST_COMMIT_DETAILS=$(cd resource-git-onboarding_ui && git log -1 --name-status)
+                echo "Build Failed for commit -  ${LAST_COMMIT_HASH}" >> build-email-contents/subject.txt
+                echo "Build Failed for commit - ${LAST_COMMIT_DETAILS}" >> build-email-contents/body.txt
+        - put: notification
+          params:
+            subject:  build-email-contents/subject.txt
+            body: build-email-contents/body.txt
+  - name: deploy
+    public: true
+    plan:
+    - get: resource-git-onboarding_ui
+      passed: [build-int]
+      trigger: true
+    - task: deploy
+      file: resource-git-onboarding_ui/ci/tasks/build.yml
+    - task: get-current-app-color
+      file: resource-git-onboarding_ui/ci/tasks/current-app-get-info.yml
+      params:
+        PWS_APP_SUFFIX: {{pws-app-suffix}}
+        PWS_API: {{cf-api}}
+        PWS_ORG: {{cf-org}}
+        PWS_USER: {{cf-user}}
+        PWS_PWD: {{cf-password}}
+        PWS_SPACE: {{cf-space}}
+    - task: prepare-app-manifest
+      file: resource-git-onboarding_ui/ci/tasks/app-manifest-prep.yml
+      params:
+        PWS_APP_SUFFIX_NEW: {{pws-app-suffix-new}}    
+    - put: resource-cf-deploy-onboarding_ui
+      params:
+        manifest: app-manifest-output/manifest.yml
+        path: uiCode/
+      on_success:
+        do:
+        - task: deploy-email-content
+          config:
+            platform: linux
+            inputs:
+            - name: resource-git-onboarding_ui
+            outputs:
+            - name: deploy-email-contents
+            image_resource:
+              type: docker-image
+              source: { repository: pallet/git-client}
+            run:
+              path: sh
+              args:
+              - -exc
+              - |
+                LAST_COMMIT_HASH=$(cd resource-git-onboarding_ui && git log -1 |grep commit | cut -d' ' -f2)
+                LAST_COMMIT_DETAILS=$(cd resource-git-onboarding_ui && git log -1 --name-status)
+                echo "Deploy Successful  for commit -  ${LAST_COMMIT_HASH}" >> deploy-email-contents/subject.txt
+                echo "Deploy Successful for commit - ${LAST_COMMIT_DETAILS}" >> deploy-email-contents/body.txt
+        - put: notification
+          params:
+            subject:  deploy-email-contents/subject.txt
+            body: deploy-email-contents/body.txt
+      on_failure:
+        do:
+        - task: deploy-email-content
+          config:
+            platform: linux
+            inputs:
+            - name: resource-git-onboarding_ui
+            outputs:
+            - name: deploy-email-contents
+            image_resource:
+              type: docker-image
+              source: { repository: pallet/git-client}
+            run:
+              path: sh
+              args:
+              - -exc
+              - |
+                LAST_COMMIT_HASH=$(cd resource-git-onboarding_ui && git log -1 |grep commit | cut -d' ' -f2)
+                LAST_COMMIT_DETAILS=$(cd resource-git-onboarding_ui && git log -1 --name-status)
+                echo "Build Failed for commit -  ${LAST_COMMIT_HASH}" >> deploy-email-contents/subject.txt
+                echo "Build Failed for commit - ${LAST_COMMIT_DETAILS}" >> deploy-email-contents/body.txt
+        - put: notification
+          params:
+            subject:  deploy-email-contents/subject.txt
+            body: deploy-email-contents/body.txt
+  - name: promote-new-version
+    serial: true
+    public: true
+    plan:
+    - get: resource-git-onboarding_ui
+      passed: [deploy]
+      trigger: true
+    - task: get-current-app-color
+      file: resource-git-onboarding_ui/ci/tasks/current-app-get-info.yml
+      params:
+        PWS_APP_SUFFIX: {{pws-app-suffix}}
+        PWS_API: {{cf-api}}
+        PWS_ORG: {{cf-org}}
+        PWS_USER: {{cf-user}}
+        PWS_PWD: {{cf-password}}
+        PWS_SPACE: {{cf-space}}
+    - task: switch-app-routes
+      file: resource-git-onboarding_ui/ci/tasks/update-routes.yml
+      params:
+        PWS_APP_SUFFIX: {{pws-app-suffix}}
+        PWS_APP_SUFFIX_NEW: {{pws-app-suffix-new}}
+        PWS_APP_DOMAIN: {{pws-app-domain}}
+        PWS_API: {{cf-api}}
+        PWS_ORG: {{cf-org}}
+        PWS_USER: {{cf-user}}
+        PWS_PWD: {{cf-password}}
+        PWS_SPACE: {{cf-space}}
+            
+  

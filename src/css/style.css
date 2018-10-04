@@ -1,0 +1,1602 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+	font-family: arial;
+	color: #303e48;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+*{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+input:focus,textarea:focus,button:focus{
+	outline: none;
+}
+html,
+body {
+   margin:0;
+   padding:0;
+   height:100%;
+}
+.wrapper{
+	width: 100%;
+	display:inline-block;	
+}
+header{
+	width: 100%;
+	display: inline-block;
+	box-shadow: 1px 4px 3px #f3f5f9;
+}
+.PotalInfo{
+	width: 100%;
+	background: #2bb2f3;
+	padding: 17px 0;
+}
+.container{
+	max-width: 1130px;
+	width: 150%;
+	margin: 0 auto;
+}
+.containerfdbck{
+	max-width: 1000px;
+	width: 100%;
+	margin:  auto;
+}
+
+
+
+nav{
+	padding: 15px 15px 0;
+	display: inline-block;
+    width: 100%;
+}
+.HomeLink{
+	width: auto;
+	display: inline-block;
+	height: 39px;
+}
+.menuLinks{
+	float: right;
+}
+.menuLinks ul li{
+	float:left;
+	padding: 6px 20px 14px;
+	border-bottom: 3px solid transparent;
+}
+.menuLinks ul li.Active{
+	border-bottom: 3px solid #25d452;
+}
+.menuLinks ul li .aLink{
+	color: #354a5f;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 14px;
+	cursor: pointer;
+}
+.fLink{
+	cursor: pointer;
+	margin-right: 0px
+}
+.bx-wrapper{
+	border: none !important;
+	box-shadow: none !important;
+	margin-bottom: 0 !important;
+	display: inline-block;
+}
+.bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto{
+	bottom: 14px !important;
+}
+.bx-wrapper img{
+	width: 100%;
+}  
+
+.Slider{
+	display: inline-block;
+}
+.SliderSection{
+	display: inline-block;
+}
+.SliderDiv{
+	position: relative;
+}
+.SliderTxt {
+    position: absolute;
+    top: 50%;
+    color: black;
+    margin-top: -80px;
+	width: 41%;
+	text-align: left;
+	left: 75px;
+    top: 102px;
+		
+}
+.SliderTxt h1{
+	font-size: 40px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	margin-bottom: 10px;
+	line-height: 46px;
+}
+.SliderTxt p {
+	line-height: 22px;
+	font-weight: bold;	
+} 
+
+.row{
+	width: 100%;
+}
+.TwoColumn{
+	width: 48%;
+	display: inline-block;
+	border: 1px solid #e8ebf1;
+	position: relative;
+	vertical-align: top;
+}
+.UserInfo{
+	width: 100%;
+	padding: 35px;
+}
+
+.GeneralInfo{
+	width: 100%;
+	line-height: 0;
+}
+.MainContent {
+    margin-top: 30px;
+	min-height:390px;
+}
+.UserInfo h4{
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 15px;
+}
+
+.FeedbackContent {
+    margin-top: 30px;
+	min-height:430px;
+	
+}
+
+.FeedbackInfo{
+	width: 100%;
+	padding: 35px;
+	
+}
+.FeedBackHighlightsName{
+	margin-top: 10px;
+	font-size: 13px;
+	font-weight:bold;
+	font-size: 15px;
+}
+.FeedBackHighlights{
+	margin-top: 10px;
+	font-size: 13px;
+	font-weight:bold;
+	font-size: 18px;
+}
+.FeedBacktextHighlights{
+	margin-top: 10px;
+	font-size: 14px;
+}
+.FeedbackInfo h4{
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 20px;
+	margin-left:8px;
+}
+.ReviewCounts{
+	margin-top: 10px;
+	font-size: 14px;
+}
+
+
+
+.VerticalAlign{
+	display: inline-block;
+	vertical-align: middle;
+}
+.ReadMore{
+	position: absolute;
+	right: 26px;
+    bottom: 21px;
+}
+
+.ReadMore p span{
+	margin-right: 5px;
+	color: #35ad54;
+	font-size: 14px;
+	line-height: 0;
+}
+.ReadMoreTwo{
+	display: inline-block;
+    width: auto;
+    float: right;
+}
+.ReadMoreTwo p span{
+	margin-right: 5px;
+	color: #35ad54;
+	font-size: 14px;
+	line-height: 0;
+}
+.UserInfo p{
+	font-size: 14px;
+    line-height: 18px;
+}
+.thleft{
+    margin-right: 2%;
+}
+.ThreeColumn{
+	width: 32%;
+	float:left;
+	vertical-align: top;
+	text-align: center;
+}
+.Discover{
+	background: #54ce7c;
+}
+.Disc{
+	color: #54ce7c;
+}
+.Assimilate{
+	background: #5598cc;
+}
+.Assimi{
+	color: #5598cc;
+}
+.Learn{
+	background: #ea9940;
+}
+.Lean{
+	color: #ea9940;
+}
+.Evolve{
+	background: #ea9940;
+}
+.ProcessTxt{
+	border: 1px solid #e8ebf1;
+	padding: 20px;
+	height: 200px;
+	text-align: left;
+	overflow-y: auto;
+}
+.ProcessTxt h4{
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+.ProcessTxt p{
+	font-size: 14px;
+	line-height: 18px;
+	color: #303e48;
+}
+.ProcessImage {
+    padding: 20px;
+    height: 150px;
+	display: table;
+	width: 100%;
+}
+.ImagesMiddle{
+	display: table-cell;
+	vertical-align: middle;
+}
+.ProcessTitle {
+    margin: 30px 0 50px;
+	float: left;
+	width: 100%;
+}
+.fleft{
+    margin-right: 1.33%;
+}
+.fltright{
+	float: right;
+}
+.fltleft{
+	float: left;
+}
+
+footer {
+    background: #e5edf1;
+    width: 100%;
+    display: inline-block;
+    padding: 18px 0;
+}
+.SocialLink li {
+	display: inline-block;
+	padding-right: 15px;
+}
+.SocialLink{
+	display:inline-block;
+	width: auto;
+	margin-top: 7px;
+}
+#outlookIcon{	
+	float: left;
+}
+#emailId{	
+	width: 100;
+	margin-top: 7px;
+	margin-left: 7px;
+	float: left;
+}
+
+#feedbackIcon{
+	float: right;
+}
+.feedBackText{
+	max-width: 1000px;
+    width: 100%;
+    margin: 15px 300px;
+}
+.feedBackListHeader{
+    width: 100%;
+    background: #e5edf1;
+    display: inline-block;
+}
+.feedBackContainer
+{
+	width: 100%;
+}
+.feedBackHeaderLabel{
+	margin: 20px ;
+}
+
+.FeedbackInfo{
+	width: 100%;
+	padding: 35px;
+	
+}
+.NextSection{
+	float: right;
+}
+.NextSection span{
+	margin-right: 10px;
+	color: #303e48;
+}
+.GeneralInfo img{
+	width: 100%;
+	height: 246px;
+}
+.PortalLogin{
+	color: #fff;
+	font-size: 14px;
+	display: inline-block;
+	float: right;
+	position: relative;
+}
+.PortalLogin span{
+	margin-left: 5px;
+}
+.LoginTxt{
+	padding: 15px 30px 15px 15px;
+	cursor: pointer;
+}
+.LoginDetials{
+	width: 350px;
+	background: #fff;
+	position: absolute;
+	z-index: 2;
+	padding: 30px;
+	right: 0;
+}
+.LoginDetials{
+	color: #303e48;
+	font-size: 12px;
+	border-bottom: 4px solid #2bb2f3;
+	border-right: 1px solid #e8ebf1;
+	border-left: 1px solid #e8ebf1;
+}
+.label {
+    margin-bottom: 10px;
+}
+.input {
+    margin-bottom: 25px;
+}
+.FormRow .MarZro{
+	margin-bottom: 10px !important;
+}
+.input input{
+	width: 100%;
+	height:35px;
+	padding: 0 10px;
+	border: 1px solid #dae0e2;
+}
+.ForgotPass{
+	text-align: right;
+}
+.SubBtn{
+	text-align: center;
+	margin-top: 20px;
+}
+.SubBtn input{
+	border: none;
+    padding: 12px;
+    background: #fbb603;
+    color: #fff;
+    width: 87px;
+	cursor: pointer;
+}
+.approveBtn{
+	background: #4bc752;
+	color: #fff;
+	padding: 10px 25px;
+	border:none;
+	border-radius: 3px;
+	font-size: 16px;
+	margin-right: 10px;
+	cursor: pointer;
+	border-width: 150px;
+	margin-top: 8px;
+}
+.approvedBtn{
+	background: gray;
+	color: #fff;
+	padding: 10px 25px;
+	border:none;
+	border-radius: 3px;
+	font-size: 16px;
+	margin-right: 10px;
+	cursor: not-allowed;
+	pointer-events: none;
+	border-width: 0px;
+	margin-top: 8px;
+	
+}
+.approveBtn:active {     
+	color: #fff;
+    background:gray;    
+}
+.approveBtn:focus {     
+	color: #fff;
+    background:gray;    
+}
+:target {
+  color: #fff;
+  background:gray; 
+}
+
+.cancelFeedbackBtn{
+	background: #4bc752;
+	color: #fff;
+	padding: 10px 25px;
+	border:none;
+	border-radius: 3px;
+	font-size: 16px;
+	margin-right: 10px;
+	cursor: pointer;
+	border-width: 150px;
+}
+.cancelFeedbackBtnNew{
+	background: transparent;
+    border: none !important;
+    font-size:0;
+}
+.btn:disabled{ 
+	background: #808080;
+}
+.SubBtn input[type="button"]:disabled{
+  background: #ffdd86;
+  cursor: default;
+}
+.Active.LoginTxt{
+	background: #fff;
+	color: #303e48;
+}
+.LoginTxt .close{
+	display: block !important;
+}
+.LoginArrow:after{
+	background: url(../images/drop_arrow_1.png) no-repeat;
+    content: "";
+    width: 12px;
+    height: 6px;
+    float: left;
+    position: absolute;
+    top: 21px;
+	right: 12px;
+}
+.Active.LoginTxt .LoginArrow:after{
+	background: url(../images/drop_arrow_2.png) no-repeat;
+}
+.ProcessTitle a{
+	text-decoration: none;
+}
+
+/* Content Page Css */
+.ProgressTrack{
+	width: 25%;
+	border: 1px solid #eaedf2;
+	margin-right: 2%;
+	display: inline-block;
+}
+.ProgressTrackFdk{
+	width: 21%;
+    border: 0px solid #eaedf2;
+	margin: 2%;
+	float : left;
+}
+.FeedbackContainer{
+	width: 100%;
+}
+.ProgreeStep{
+	border: 1px solid #e8ebf1;
+	padding: 10px 10px;
+}
+.HeadTxt{
+	background: #dfe3e6;
+	color: #000;
+	font-weight: bold;
+}
+.ProgreeStepFdk{
+	padding: 10px 10px;
+	border: 1px solid #e8ebf1;
+}
+.ProgreesStepImage{
+	padding: 10px 10px;
+}
+.HeadTxtFdk{
+	margin-top: 0%;
+	background: #dfe3e6;
+	color: #000;
+	font-weight: bold;
+}
+.Completed .ProgressState span.Pointer, .Active .ProgressState span.Pointer{
+	width: 20px;
+    height: 20px;
+	border-radius: 50%;
+	display: inline-block;
+	border: 1px solid #e8ebf1;
+}
+.ProgressState span.Pointer{
+	margin-right: 6%;
+	position: relative;
+}
+.Completed .ProgressState span.Pointer:before{
+	width: 10px;
+    height: 10px;
+	border-radius: 50%;
+	display: inline-block;
+	background: #1eb850;
+	position: absolute;
+	content: "";
+	top: 4px;
+    right: 4px;
+}
+.ProgressTxt{
+	width: 77%;
+	font-size: 14px;
+	color: Black;
+	line-height: 19px;
+	margin-top: -5px;
+}
+.Completed .EditIcon,.Active .EditIcon{
+	display: none;
+}
+.ProgressContent{
+	width: 73%;
+	display: inline-block;
+	border: 1px solid #e8ebf1;
+	float: right;
+	padding: 30px;
+}
+.ProgressContentFdk{
+	width: 75%;
+    display: inline-block;
+    border: 2px solid #e8ebf1;
+    padding: 30px;
+	margin: 2% 0%;
+	overflow: auto;
+	height: 500px;
+}
+.ProceesTopicTitle{
+	color: #3bb1d9;
+	font-weight: bold;
+	line-height: 23px;
+}
+.ProgressContent h4{
+	margin-bottom: 15px;
+	font-size: 18px;
+}
+.ProgressContent p{
+	font-size: 14px;
+	margin-bottom: 20px;
+	line-height: 20px;
+}
+.PdfLink{
+	width: auto;
+	display: inline-block;
+}
+.PdfLink a{
+	color: #be6813;
+	text-decoration: underline;
+}
+.ReadMoreTwo p{
+	margin-bottom: 0;
+}
+.VideoSection{
+	margin-bottom: 20px;
+	margin-top: 10px;
+	width: 100%;
+}
+.VideoSection img{
+	width: 100%;
+}
+.MarkBtn button{
+	padding: 10px 17px;
+	background: #42cb6f;
+	border: none;
+	border-radius: 20px;
+	color: #fff;
+	cursor: pointer;
+}
+.MarkBtnDisabled button{
+	padding: 10px 17px;
+	background: #a6ada8;
+	border: none;
+	border-radius: 20px;
+	color: #fff;
+	cursor: default;
+}
+.Progress{
+	margin-bottom: 40px;
+}
+.ProgressTrack .ProgreeStep:last-child{
+	border-bottom: none !important;
+}
+.ProgreeStep .ProgressState{
+	cursor: pointer;
+}
+.LogedUser{
+	padding: 14px;
+	text-align: right;
+}
+
+.video-container {
+	position:relative;
+	padding-bottom:56.25%;
+	height:0;
+	overflow:hidden;
+}
+
+.video-container iframe, .video-container object, .video-container embed {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+}
+.LogoCon{
+	width: auto;
+	display: inline-block;
+}
+.DivLink{
+	cursor: pointer;
+}
+.VerticalAlign.UserName {
+    margin-right: 7px;
+}
+.ErrorTxt{
+	color: #f00;
+    margin: 0 0 10px 0 !important;
+    display: inline-block;
+}
+.Logout{
+	cursor: pointer;
+	float: right;
+}
+.pdfViewer, .pptViewer{
+	box-shadow: 1px 2px 1px #888;
+        margin: 30px 0;
+	width: 654px;
+	
+}
+
+.MobileSlider{
+	display: none;
+}
+.loginWrapper{
+	float: right;
+	position: relative;
+	
+}
+
+
+/* Css for Admin Page */
+.AdminContent{
+	border: 1px solid #e8edf6;
+	padding-left: 50px;
+	margin-bottom: 50px;
+	position: relative;
+}
+.TadHeader{
+	border-bottom: 2px solid #e8edf6;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+	min-height: 58px;
+	margin-top: 8px;
+}
+.TadHeader ul{
+	position: absolute;
+	bottom: -2px;
+}
+.TabClick li{
+	display: inline-block;
+	padding: 20px 25px 15px;
+}
+.TabClick li a{
+	text-decoration: none;
+	color: #354a5f;
+}
+.TabClick li{
+	border-bottom: 3px solid transparent; 
+	cursor: pointer;
+	font-weight: bold;
+}
+.TabClick li.Active{
+	border-bottom: 3px solid #25d452; 
+}
+.TabCon{
+	padding: 50px 40px 50px 30px;
+	height: auto;
+	overflow: auto;
+	position: relative;
+}
+.TableView{
+	border: 1px solid #e8edf6;
+	width: 40%;
+	font-size: 14px;
+	display: inline-block;
+}
+.TableViewforContent{
+	border: 3px solid #e8edf6;
+	width: 40%;
+	font-size: 14px;
+	display: table;
+}
+.TableViewforFeedback{
+	border: 1px;
+	vertical-align: top;
+	margin: 6px;
+	width:100%;
+	display :inline-block;
+}
+.TabContent{
+	font-size: 14px;
+}
+.HeadView{
+	background: #687182;
+	padding: 20px 30px;
+	color: #fff;
+	width: 100%;
+	float: left;
+	display: table;
+}
+.HeadViewForFeedback{
+	background: #687182;
+	padding: 20px 34px;
+	color: #fff;
+	width: 33.4%;
+	float: left;
+	display: table;
+	text-align: left;
+	font-weight: bold;
+}
+.HeaderForFeedBackList{
+	background: #687182;
+    padding: 10px 20px;
+    color: #fff;
+    width: 50%;
+    float: left;
+    display: table;
+    text-align: left;
+	font-weight: bold;
+	font-size: 17px;
+	/*margin-top: -52px;*/
+}
+.HeaderForFeedBackListPerUser{
+	background: #687182;
+    padding: 14px 30px;
+    color: #fff;
+    width: 85%;
+    float: left;
+    display: table;
+    text-align: left;
+    font-weight: bold;
+    font-size: 17px;
+    /* margin-top: -52px; */
+    float: left;
+}
+
+
+.TableView .RowView:last-child{
+	border-bottom: none !important;
+}
+.RowView{
+	padding: 20px 30px;
+	position: relative;
+	border-bottom: 1px solid #e8edf6;
+	width: 100%;
+	float: left;
+	display: table;
+}
+.RowViewFdbk{
+	padding: 20px 5px;
+	position: relative;
+	border-bottom: 1px solid #e8edf6;
+	width: 100%;
+	float: left;
+	display: table;
+}
+
+.TableIcon{
+	position: absolute;
+	right: 9%;
+	top:50%;
+	margin-top: -21px;
+}
+.ColumnView{
+	width: auto;
+	padding-right: 125px;
+}
+.ColumnForButtons{
+	width: 38%;
+	float: left;
+	text-align: left;
+}
+.UpdateButton{
+	background: #2bb2f3;
+	color: #fff;
+	padding: 5px 15px;
+	border:none;
+	border-radius: 3px;
+	font-size: 16px;
+	margin-right: 10px;
+	cursor: pointer;
+	margin-left: 220px;
+	margin-top: 5px;
+}
+.ColumnViewforFeedback1{
+	width: 35.4%;
+	float: left;
+	text-align: left;
+	padding-right: 50px;
+	margin-top :8px;
+}
+.ColumnViewforFeedback2{
+	width: 33.4%;
+	float: left;
+	text-align: left;
+	padding-left: 0%;
+	padding-right: 50px;
+	list-style-position:inside;
+	font: inherit;
+	
+}
+.ColumnViewforFeedback3{
+	text-align: right;
+	
+}
+.ColumnViewFeedbackList1{
+	width: 38%;
+    float: left;
+    text-align: left;
+    padding-right: 50px;
+    margin-left: 18px;
+}
+.ColumnViewFeedbackList2{
+	width: 50%;
+	float: left;
+	text-align: left;
+	padding-left: 0%;
+	padding-right: 50px;
+}
+
+
+.ColumnViewforFeedback3{
+	width: 33.4%;
+	padding-right: 50px;
+	margin-left:100;
+	float: center;
+	text-align: center;
+	padding-left: 0%;
+	padding-right: 50px;
+	
+}
+.ColumnViewforFeedback3{
+	width: 33.4%;
+	padding-right: 50px;
+	margin-left:100;
+	float: center;
+	text-align: center;
+}
+.FeedbackIconPerUser{ 
+	width: 10%;
+	float: left;
+	margin-left: 25px;
+}
+.FeedbackPerUser{
+	width:100%;
+}
+
+.TableIcon span {
+    margin-right: 9px;
+	cursor: pointer;
+}
+.TableIcon span:last-child{
+	margin-right:0;
+}
+.RoleColumn{
+	width: 45%;
+	float: left;
+	padding: 20px 8px;
+}
+
+.RoleColumnFdbck{
+	width: 100%;
+	float: center;
+	padding: 10px;
+}
+#feedBackText{
+	margin:1px 10px;
+}
+
+.FormContainer{
+	width: 80%;
+	display: inline-block;
+}
+.Roleright{
+	margin-right: 8%;
+}
+.RoleColumn .RoleInput input{
+	width:100%;
+	height: 40px;
+	border: 1px solid #dfe6eb;
+	padding: 10px;
+	border-radius: 3px;
+}
+.RoleColumn .RoleInput input[type="checkbox"]{
+	width: 5%;
+	height: 30px;
+	border: 1px solid #dfe6eb;
+	padding: 10px;
+	border-radius: 3px;
+}
+.RoleColumn .RoleInput textarea{
+	width: 100%;
+	border: 1px solid #dfe6eb;
+	padding: 10px;
+	border-radius: 3px;
+}
+
+.RoleColumnFdbck .RoleInput textarea{
+	width: 98%;
+	border: 1px solid #dfe6eb;
+	padding: 10px;
+	border-radius: 3px;
+}
+
+
+
+.RoleColumn .RoleLabel{
+	margin-bottom: 15px;
+	font-weight: bold;
+}
+.RoleRow {
+    margin-bottom: 30px;
+    display: inline-block;
+    width: 100%;
+}
+.RoleEditForm{
+	/*display: none;*/
+}
+.UpdateIcon{
+	float: right;
+    width: auto;
+    display: inline-block;
+	top: 23px;
+    right: 33px;
+	position: absolute;
+}
+.UpdateIcon span{
+	margin-right: 7px;
+	cursor: pointer;
+}
+.FormBtn{
+  position: absolute;
+  right: 48px;
+  bottom: 12px;
+}
+.FormBtnforFdbck{
+	float:right;
+	padding: 5px 113px;
+  }
+.Save{
+	background: #4bc752;
+	color: #fff;
+	padding: 10px 25px;
+	border:none;
+	border-radius: 3px;
+	font-size: 16px;
+	margin-right: 10px;
+	cursor: pointer;
+}
+.Back{
+	background: #4bc752;
+	color: #fff;
+	padding: 10px 25px;
+	border:none;
+	border-radius: 3px;
+	font-size: 16px;
+	margin: 0px 37px;
+	cursor: pointer;
+
+}
+
+.FeedbackButton{
+	background: #4bc752;
+	color: #fff;
+	padding: 10px 25px;
+	border:none;
+	border-radius: 3px;
+	font-size: 16px;
+	margin: 10px;
+	cursor: pointer;
+}
+.Cancel{
+	background: #a1b2bb;
+	color: #fff;
+	padding: 10px 25px;
+	border:none;
+	border-radius: 3px;
+	font-size: 16px;
+	cursor: pointer;
+}
+.EditIconRound{
+	background: url(../images/EditIcon.png) no-repeat;
+	width:36px;
+	height: 42px;
+	display: inline-block;
+}
+.EditIconRound:hover{
+	background: url(../images/EditIconHover.png) no-repeat;
+}
+.DeleteIcon{
+	background: url(../images/DeleteIcon.png) no-repeat;
+	width:36px;
+	height: 42px;
+	display: inline-block;
+}
+.DeleteIcon:Hover{
+	background: url(../images/DeleteIconHover.png) no-repeat;
+}
+.editIconDisabled:Hover{
+	background: url(../images/EditIcon.png) no-repeat;
+}
+.deleteIconDisabled:Hover{
+	background: url(../images/DeleteIcon.png) no-repeat;
+}
+.AddIcon{
+	background: url(../images/RoleAddIcon.png) no-repeat;
+	width:36px;
+	height: 42px;
+	display: inline-block;
+}
+.AddIcon:Hover{
+	background: url(../images/RoleAddIconHover.png) no-repeat;
+}
+.DragIcon{
+	background: url(../images/dragicon.png) no-repeat;
+	width:36px;
+	height: 42px;
+	display: inline-block;
+}
+.BodySection{
+	padding-bottom:73px; 
+}
+.FooterSection{
+	position:absolute;
+	bottom:0;
+	width:100%;
+	height:73px;   
+}
+.wrapper{
+	min-height:100%;
+	position:relative;
+}
+.FirstColumn{
+	width: 50%;
+	float: left;
+}
+.RowView .FirstColumn:last-child{
+	text-align: center;
+}
+.Status.InProgress:before{
+	content: "";
+	background: url(../images/InPro.png) no-repeat;
+	width: 13px;
+	height: 13px;
+	display: inline-block;
+	position: relative;
+    top: 1px;
+    right: 5px;
+
+}
+.Status.Completed:before{
+	content: "";
+	background: url(../images/Com.png) no-repeat;
+	width: 13px;
+	height: 13px;
+	display: inline-block;
+	position: relative;
+    top: 1px;
+    right: 5px;
+}
+.Status.NotStarted:before{
+	content: "";
+	background: url(../images/Not.png) no-repeat;
+	width: 13px;
+	height: 13px;
+	display: inline-block;
+	position: relative;
+    top: 1px;
+    right: 5px;
+}
+.InnerTabCon{
+	display: none;
+}
+.InnerTabCon:first-child{
+	display: block;
+}
+.TabClickFnc li{
+	text-decoration: none;
+	color: #354a5f;
+	font-weight: bold;
+}
+.InnerTabHeader ul{
+	border: 1px solid #dce3e9;
+	width: auto;
+	float:left;
+	border-radius: 3px;
+}
+.InnerTabHeader{
+	display: inline-block;
+}
+.InnerTabHeader ul li{
+	float: left;
+	padding: 15px 35px;
+	cursor: pointer;
+}
+.InnerTabHeader ul li.Active{
+	background: #25d452;
+	color: #fff;
+}
+.InnerTabCon{
+	padding-top: 0px;
+}
+.UserFormContainer{
+	width: 86%;
+}
+.RoleColumn .RoleInput select{
+	width: 100%;
+	height: 40px;
+	border: 1px solid #dce3e9;
+}		
+.UserStatusEdit{
+	/*display: none;*/
+}
+.ContentStatus .TableView{
+	width: 65%;
+}
+.ContentStatus{
+	display: inline-block;
+}
+.SecondColumn{
+	display: table-cell;
+	vertical-align: middle;
+}
+.col30{
+	width: 30%;
+}
+.col40{
+	width: 40%;
+}
+.SecondColumn:last-child{
+		text-align: center;
+}
+.Center{
+	text-align: center;
+}
+.Stage{
+	display: inline-block;
+	width: 100%;
+}
+.StageEdit{
+	width: 85%;
+	display: inline-block;
+	display: none;
+}
+.SubStageEdit{
+	display: none;
+	width: 85%;
+	float: left;
+}
+.ContentSectionEdit {
+    display: none;
+	margin-bottom: 70px;
+	width: 85%;
+}
+.VerticalColumn{
+	margin-bottom: 20px;
+}
+.PosRel{
+	position: relative;
+}
+.PlusIcon {
+    position: absolute;
+    right: -44px;
+    top: 3px;
+	cursor: pointer;
+}
+.AddedDocuments, .AddedRoles{
+	width: 100%;
+	display: inline-block;
+	margin-top: 40px;
+	/*margin-bottom: 30px;*/
+}
+.AddedDocuments li.DocName, .AddedRoles li.RoleName{
+	border: 1px solid #dce3e9;
+	border-radius: 3px;
+	padding: 10px 15px;
+	width: auto;
+	display: inline-block;
+	position: relative;
+	margin: 0 15px 15px 0;
+}
+.CloseBtn {
+    position: absolute;
+    right: -8px;
+    top: -13px;
+	cursor: pointer;
+}
+
+
+
+#invalidErrTxt{
+	color: red;
+    padding: 0 0 10px 0;
+	font-size: 16px;
+	display: none;
+}
+.userTab{
+	padding: 50px 40px 50px 30px !important;
+}
+.invalidUserForm{
+	color: red;
+	padding: 5px;
+}
+.invalidRoleForm{
+	color: red;
+}
+.roleDelErr{
+	padding: 10px;
+  color: red;
+}
+.invalid{
+	border: 1px solid red !important;
+}
+.ProgressTrack .active{
+	border-left: 3px solid #25d452;
+}
+.DocumentColumn .RoleInput select, .DocumentColumn .RoleInput input{
+	width: 48%;
+}
+.DocumentColumn .RoleInput select{
+	margin: 0 0 0 5px;
+}
+.docErrorTxt, .roleErrorTxt{
+	color: red;
+	padding: 0px 0 10px 0;
+	display: none;
+}
+.PlusIconDisabled{
+	cursor: default;
+	opacity: 0.5;
+}
+.blockLink{
+	display: block;
+	padding-top: 20px;
+}
+.inlineLink{
+	display: inline;
+}
+.ulListContainer ul{
+	list-style-type: disc;
+	padding: 20px 0 20px 20px;
+}
+.red{
+	color: red;
+}
+.yellow{
+	color: yellow;
+}
+.green{
+	color: green;
+}
+.blue{
+	color: blue;
+}
+.orange{
+	color: orange;
+}
+.aqua{
+	color: #00FFFF;
+} 
+.violet{
+	color: #8A2BE2;
+}
+.brown{
+	color:#A52A2A;
+}
+.cyan{
+	color: 	#00FFFF;
+}
+.magenta{
+	color: #8B008B;
+}
+.pink{
+	color: #FF1493;
+}
+.gray{
+	color: 	#696969;
+}
+/* End */
+
+/* Media Query */
+
+@media only screen and (min-width: 1370px) {
+	.container{
+		max-width: 85%;
+	}
+}
+@media only screen and (max-width: 1180px) {
+   .container{
+	   padding: 0 15px; 
+   }
+   .SliderTxt{
+	   width: 43%;
+   }
+}
+@media only screen and (max-width: 1024px) {
+	.SliderTxt{
+		width: 49%;
+	}
+}
+@media only screen and (max-width: 960px) {
+	.SliderTxt h1{
+		font-size: 31px;
+		line-height: 40px;
+	}
+	.SliderTxt {
+		width: 53%;
+	}
+}
+@media only screen and (max-width: 768px) {
+   .menuLinksMob .MobileIcon{
+		display: block !important;
+		width: 25px;
+		cursor: pointer;
+   }
+   .menuLinksMob{
+	   position: relative;
+   }
+   .MobileShow{
+		position: absolute;
+		z-index: 2;
+		top: 32px;
+		right: 4px;
+		background: #fff;
+		width: 173px;
+		border-bottom: 1px solid #e8ebf1;
+   }
+   .menuLinks ul li{
+	   width: 100%;
+	   padding: 10px 18px;
+   }
+   .MobileShow li{
+	   border: 1px solid #e8ebf1;
+	   display: block !important;
+	}
+	.MobileShow li .aLink{
+		font-size: 12px !important;
+		cursor: pointer;
+	}
+	
+   .menuLinksMob ul{
+	   display: none;
+   }
+   .TwoColumn {
+		width: 80%;
+		margin: 15px auto;
+		float: none;
+		display: block;
+   }
+   .SliderTxt h1 {
+    font-size: 26px;
+    line-height: 33px;
+	}
+	.ThreeColumn {
+		width: 80%;
+		display: block;
+		margin: 0 auto 20px;
+		float: none;
+	}
+	.ProgressTxt{
+		width: 74%;
+	}
+	nav{
+		padding: 13px 15px 8px;
+	}
+	.menuLinksMob{
+		padding-top: 2px;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.ThreeColumn {
+		width: 80%;
+		display: block;
+		margin: 0 auto 20px;
+		float: none;
+	}
+	.ProcessTitle{
+		float: none;
+	}
+	.ProcessImage {
+		height: 150px;
+	}
+	.TwoColumn{
+		width: 93%;
+	}
+	.ThreeColumn {
+		width: 93%;
+	}
+	.ProgressTxt {
+		width: 74%;
+	}
+}
+@media only screen and (max-width: 568px) {
+	.SliderTxt h1 {
+		font-size: 23px;
+		line-height: 30px;
+	}
+	.SliderTxt p {
+		line-height: 18px;
+		font-size: 12px;
+	}
+	.UserInfo{
+		padding: 20px;
+	}
+	.SliderTxt {
+		width: 65%;
+	}
+	.ProgressTrack{
+		width: 100%;
+		min-height: auto !important;
+	}
+	.ProgressContent{
+		width: 100%;
+		margin-top: 20px;
+		min-height: auto !important;
+		margin-bottom: 30px;
+		position: relative;
+	}
+	.ProgressTxt {
+		width: 85%;
+	}
+	.LogoCon{
+		width: 50%;
+	}
+	.LogoCon img{
+		width: 100%;
+	}
+	.PortalLogin{
+		width: 50%;
+		display: inline-block;
+	}
+	.LogedUser {
+		padding: 3px 5px 5px 18px;
+		line-height: 15px;
+		width: 150% ;
+	}
+	.LogedUser p {
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;	
+	}
+}
+@media only screen and (max-width: 440px) {
+	.SliderTxt h1 {
+		font-size: 18px;
+		line-height: 21px;
+	}
+	.SliderTxt{
+		margin-top: -46px;
+	}
+	.SliderTxt p {
+    line-height: 13px;
+    font-size: 9px;
+	}
+	.LoginDetials{
+		width: 310px;
+	}
+	.rowTable {
+		width: 100%;
+		margin: 0 auto;
+	  }
+	  .block {
+		width: 100px;
+		float: left;
+	  }
+	  .arrange-horizontally > * {
+		display: inline-block;
+		text-align: center;
+	}
+}
+.ContentSection{
+	width: 45%;
+    float: left;
+    margin: 0 2% 2% 0;
+}
+.TableView{
+	overflow:auto;
+	
+}
+::-webkit-scrollbar {
+	width: 10px;
+    background: #bcbfca;
+    border-radius: 5%;
+}
+
+.ProgressTrackFdk .active {
+    border-left: 3px solid #25d452;
+}

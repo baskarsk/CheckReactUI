@@ -1,0 +1,17 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: pivotalservices/docker-concourse-cf-tools
+    tag: latest
+
+inputs:
+- name: resource-git-onboarding_ui
+
+outputs:
+- name: current-app-info
+
+run:
+  path: resource-git-onboarding_ui/ci/tasks/current-app-get-info.sh

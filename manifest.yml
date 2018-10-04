@@ -1,0 +1,8 @@
+---
+applications:
+- name: APPNAME #Changed appname for blue green deployment
+  memory: 512M
+  disk_quota: 2048M
+  buildpack: nodejs_buildpack
+  instances: 1
+  command: node index.js

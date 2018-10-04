@@ -1,0 +1,73 @@
+cf-api: https://api.system.dev.digifabricpcf.com
+cf-user: Deyvasigamani.sundaramurthy@cognizant.com
+cf-password: Vasansund@3
+cf-org: onboarding
+cf-space: PROD
+
+email-username: cognizantonboarding2017@gmail.com
+email-password: cognizantonboarding
+email-from: cognizantonboarding2017@gmail.com 
+
+pws-app-suffix: bodhaUi #CF app name PROD Version
+pws-app-suffix-new: latest-bodhaui
+pws-app-domain: app.dev.digifabricpcf.com
+
+git-release-repository: OnboardingPortal-UI
+git-release-owner: TheCognizantFoundry
+git-release-access_token: 978f25d3a0c9618f4e637699198c950d25589c1b
+
+git-url: git@github.com:TheCognizantFoundry/OnboardingPortal-UI.git
+git-branch: master
+git-user: ganesanbbc
+git-private-key: |
+  -----BEGIN RSA PRIVATE KEY-----
+  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
+  -----END RSA PRIVATE KEY-----

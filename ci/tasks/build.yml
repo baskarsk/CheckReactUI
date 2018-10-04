@@ -1,0 +1,17 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: node
+    tag: latest
+
+inputs:
+- name: resource-git-onboarding_ui
+
+outputs:
+- name: uiCode
+
+run:
+  path: resource-git-onboarding_ui/ci/tasks/build.sh
