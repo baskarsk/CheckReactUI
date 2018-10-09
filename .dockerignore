@@ -4,5 +4,4 @@
 !.env.production
 build
 coverage
-Dockerfile
-node_modules
+node_modules/

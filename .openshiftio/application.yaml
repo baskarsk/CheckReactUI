@@ -127,7 +127,7 @@ objects:
             name: bodha-builder:latest
           paths:
             - destinationDir: .
-              sourcePath: /opt/app-root/output/.
+              sourcePath: /app-root/output/.
     strategy:
       sourceStrategy:
         from:
