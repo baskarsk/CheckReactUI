@@ -1,5 +1,5 @@
 {
-  "name": "bodha",
+  "name": "boardingui",
   "version": "1.0.0",
   "description": "BODHA - Onboarding Portal",
   "engines": {
@@ -7,16 +7,16 @@
   },
   "main": "index.js",
   "scripts": {
-#    "clean-dist": "npm run remove-dist && mkdir final",
-#    "start": "npm-run-all --parallel open:src test:watch",
-#    "open:src": "babel-node tools/server.js",
-#    "remove-dist": "rimraf ./final",
+     "clean-dist": "npm run remove-dist && mkdir final",
+     "start": "npm-run-all --parallel open:src test:watch",
+     "open:src": "babel-node tools/server.js",
+     "remove-dist": "rimraf ./final",
      "prebuild": "npm-run-all build:html",
      "build:html": "babel-node tools/buildHtml.js",
      "build": "babel-node tools/build.js",
 #    "test": "mocha --reporter spec tools/testSetup.js \"src/**/*.test.js\"",
 #    "test:watch": "npm run test -- --watch"
-#	 "build-js": "react-scripts build",
+  	 "build-js": "react-scripts build",
      "start:dev": "npm-run-all -p watch-css start:local",
      "start:local": "react-scripts start",
      "build": "yarn copy-fonts && yarn copy-img && yarn build-css && yarn build-js; yarn postbuild;",
@@ -26,7 +26,7 @@
 #    "analyze": "source-map-explorer build/static/js/main.*",
      "lint": "yarn lint:js",
      "lint:js": "eslint --max-warnings 0 src",
-     "docker:build": "docker build -t onboardingui .",
+     "docker:build": "docker build -t boardingui .",
      "preinstall": "node -v; npm -v;",
      "postbuild": "[ \"$BUILD_ENV\" != OCP ] && exit 0; yarn install --production --ignore-scripts --prefer-offline;"
   },
@@ -123,11 +123,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Jesudos/OnboardingUI.git"
+    "url": "git+https://github.com/baskarsk/CheckReactUI.git"
   },
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Jesudos/OnboardingUI/issues"
+    "url": "https://github.com/baskarsk/CheckReactUI/issues"
   },
-  "homepage": "https://github.com/Jesudos/OnboardingUI#readme"
+  "homepage": "https://github.com/baskarsk/CheckReactUI#readme"
 }
