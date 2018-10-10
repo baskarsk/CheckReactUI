@@ -16,9 +16,9 @@
     "eject": "react-scripts eject",
 	"lint": "yarn lint:js",
     "lint:js": "eslint --max-warnings 0 src",
-    "docker:build": "docker build -t patternfly-react-demo-app .",
+    "docker:build": "docker build -t bodha .",
     "preinstall": "node -v; npm -v;",
-    "postbuild": "[ \"$BUILD_ENV\" != OCP ] && exit 0; yarn install --production --ignore-scripts --prefer-offline;"
+    "postbuild": "[ \"$BUILD_ENV\" != OCP ] && exit 0; yarn install --production --ignore-scripts --prefer-offline;",
     "remove-dist": "node_modules/.bin/rimraf ./final",
     "prebuild": "npm-run-all build:html",
     "build:html": "babel-node tools/buildHtml.js",
