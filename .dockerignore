@@ -2,6 +2,7 @@
 .gitignore
 .env.*
 !.env.production
-build
-coverage
-node_modules/
+#build
+#coverage
+Dockerfile
+node_modules

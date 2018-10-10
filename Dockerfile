@@ -9,9 +9,8 @@ RUN printf "[nginx]\nname=nginx repo\nbaseurl=http://nginx.org/packages/centos/7
 
 RUN chmod 777 /var/log/nginx && chmod 777 /var/cache/nginx && chmod 777 /var/run && rm -rf /var/log/nginx/* && rm -rf /var/cache/nginx/*
 
-RUN mkdir -p /bodha
-WORKDIR /bodha
-ADD . /bodha
+WORKDIR /boardingui
+ADD . /boardingui
 ADD deployment/nginx.conf /etc/nginx/nginx.conf
 
 RUN yarn --production --non-interactive \
